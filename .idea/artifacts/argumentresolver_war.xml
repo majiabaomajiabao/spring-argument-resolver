@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="argumentresolver:war">
+    <output-path>$PROJECT_DIR$/argumentresolver/target</output-path>
+    <root id="archive" name="argument-resolver.war">
+      <element id="artifact" artifact-name="argumentresolver:war exploded" />
+    </root>
+  </artifact>
+</component>
