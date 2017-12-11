@@ -2,7 +2,7 @@ package com.jia.bao.controller;
 
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
-import com.jia.bao.config.ArgumentNotEmpty;
+import com.jia.bao.config.RequestParamNotEmpty;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,7 +26,7 @@ public class HelloController {
 
     @RequestMapping("/sayHiv2")
     @ResponseBody
-    public String sayHiv2(@RequestParam(value = "name", required = false) @ArgumentNotEmpty String name) {
+    public String sayHiv2(@RequestParamNotEmpty(value = "name") String name) {
 
         return GREETING + name;
     }

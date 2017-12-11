@@ -9,7 +9,13 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 /**import!!!!!  must   add    @Target    */
-public @interface ArgumentNotEmpty {
+public @interface RequestParamNotEmpty {
 
     String tip() default "不能为空";
+
+    /**
+     * The name of the request parameter to bind to.
+     */
+    String value() default "";
+
 }

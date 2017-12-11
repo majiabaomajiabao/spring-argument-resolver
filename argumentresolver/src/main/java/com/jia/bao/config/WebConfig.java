@@ -31,14 +31,14 @@ public class WebConfig extends DelegatingWebMvcConfiguration {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        argumentResolverList.add(0, argumentResolver());
+        argumentResolverList.add(0, requestParamNotEmptyResolver());
         adapter.setArgumentResolvers(argumentResolverList);
         return adapter;
     }
 
     @Bean
-    public ArgumentResolver argumentResolver() {
-        return new ArgumentResolver(configurableBeanFactory);
+    public RequestParamNotEmptyResolver requestParamNotEmptyResolver() {
+        return new RequestParamNotEmptyResolver(configurableBeanFactory, false);
     }
 
 }
